@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApplicationLogging.Adapters.Log4Net</name>
+    </assembly>
+    <members>
+        <member name="T:ApplicationLogging.Adapters.ApplicationLoggingLog4NetAdapter">
+            <summary>
+            Adapts the ApplicationLogging.IApplicationLogger interface to an implementation of the log4net.ILog interface.
+            </summary>
+            <remarks>Note that the ILog interface in log4net does not provide a property similar to the ApplicationLogging eventIdentifier by default (i.e. an id number for the log event).  Hence the eventIdentifier is not supported (i.e. not passed to log4net) in this adapter class.  Similarly there is not explicit property for the object creating the log event on the ILog interface.  In log4net this is usually defined when constructing an implementation of the ILog interface (e.g. through the LogManager class), hence to follow the log4net pattern a separate ApplicationLoggingLog4NetAdapter should be provided to each object performing logging.</remarks>
+        </member>
+        <member name="M:ApplicationLogging.Adapters.ApplicationLoggingLog4NetAdapter.#ctor(log4net.ILog)">
+            <summary>
+            Initialises a new instance of the ApplicationLogging.Adapters.ApplicationLoggingLog4NetAdapter class.
+            </summary>
+            <param name="logger">The Ilog implementation used to log messages into the log4net framework.</param>
+        </member>
+        <member name="M:ApplicationLogging.Adapters.ApplicationLoggingLog4NetAdapter.Log(ApplicationLogging.LogLevel,System.String)">
+            <summary>
+            Writes the log information.
+            </summary>
+            <param name="level">The level of importance of the log event.</param>
+            <param name="text">The details of the log event.</param>
+        </member>
+        <member name="M:ApplicationLogging.Adapters.ApplicationLoggingLog4NetAdapter.Log(System.Object,ApplicationLogging.LogLevel,System.String)">
+            <summary>
+            Writes the log information.
+            </summary>
+            <param name="source">The object which created the log event.</param>
+            <param name="level">The level of importance of the log event.</param>
+            <param name="text">The details of the log event.</param>
+        </member>
+        <member name="M:ApplicationLogging.Adapters.ApplicationLoggingLog4NetAdapter.Log(System.Int32,ApplicationLogging.LogLevel,System.String)">
+            <summary>
+            Writes the log information.
+            </summary>
+            <param name="eventIdentifier">An ID number which uniquely identifies the log event.</param>
+            <param name="level">The level of importance of the log event.</param>
+            <param name="text">The details of the log event.</param>
+        </member>
+        <member name="M:ApplicationLogging.Adapters.ApplicationLoggingLog4NetAdapter.Log(System.Object,System.Int32,ApplicationLogging.LogLevel,System.String)">
+            <summary>
+            Writes the log information.
+            </summary>
+            <param name="source">The object which created the log event.</param>
+            <param name="eventIdentifier">An ID number which uniquely identifies the log event.</param>
+            <param name="level">The level of importance of the log event.</param>
+            <param name="text">The details of the log event.</param>
+        </member>
+        <member name="M:ApplicationLogging.Adapters.ApplicationLoggingLog4NetAdapter.Log(ApplicationLogging.LogLevel,System.String,System.Exception)">
+            <summary>
+            Writes the log information.
+            </summary>
+            <param name="level">The level of importance of the log event.</param>
+            <param name="text">The details of the log event.</param>
+            <param name="sourceException">The exception which caused the log event.</param>
+        </member>
+        <member name="M:ApplicationLogging.Adapters.ApplicationLoggingLog4NetAdapter.Log(System.Object,ApplicationLogging.LogLevel,System.String,System.Exception)">
+            <summary>
+            Writes the log information.
+            </summary>
+            <param name="source">The object which created the log event.</param>
+            <param name="level">The level of importance of the log event.</param>
+            <param name="text">The details of the log event.</param>
+            <param name="sourceException">The exception which caused the log event.</param>
+        </member>
+        <member name="M:ApplicationLogging.Adapters.ApplicationLoggingLog4NetAdapter.Log(System.Int32,ApplicationLogging.LogLevel,System.String,System.Exception)">
+            <summary>
+            Writes the log information.
+            </summary>
+            <param name="eventIdentifier">An ID number which uniquely identifies the log event.</param>
+            <param name="level">The level of importance of the log event.</param>
+            <param name="text">The details of the log event.</param>
+            <param name="sourceException">The exception which caused the log event.</param>
+        </member>
+        <member name="M:ApplicationLogging.Adapters.ApplicationLoggingLog4NetAdapter.Log(System.Object,System.Int32,ApplicationLogging.LogLevel,System.String,System.Exception)">
+            <summary>
+            Writes the log information.
+            </summary>
+            <param name="source">The object which created the log event.</param>
+            <param name="eventIdentifier">An ID number which uniquely identifies the log event.</param>
+            <param name="level">The level of importance of the log event.</param>
+            <param name="text">The details of the log event.</param>
+            <param name="sourceException">The exception which caused the log event.</param>
+        </member>
+        <member name="M:ApplicationLogging.Adapters.ApplicationLoggingLog4NetAdapter.PerformLogging(ApplicationLogging.LogLevel,System.String,System.Exception)">
+            <summary>
+            Calls the underlying log4net.ILog object to log a message.
+            </summary>
+            <remarks>In ApplicationLogging the level of a log event is passed to the Log() method, but in log4net different levels have their own method.  The main purpose of this method is to translate the level parameter received in the ApplicationLogging method call, into the appropriate log4net method call.</remarks>
+            <param name="level">The level of importance of the log event.</param>
+            <param name="text">The details of the log event.</param>
+            <param name="sourceException">The exception which caused the log event.</param>
+        </member>
+    </members>
+</doc>
