@@ -11,6 +11,10 @@
     <DocumentationFile>C:\Development\C#\ApplicationLogging.Adapters.Log4Net\ApplicationLogging.Adapters.Log4Net\ApplicationLogging.Adapters.Log4Net.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Development\C#\ApplicationLogging.Adapters.Log4Net\ApplicationLogging.Adapters.Log4Net\ApplicationLogging.Adapters.Log4Net.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="ApplicationLogging" Version="2.0.0" />
     <PackageReference Include="log4net" Version="2.0.14" />
